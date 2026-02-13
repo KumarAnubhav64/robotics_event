@@ -34,8 +34,23 @@
   }
 }
 
+@keyframes scan {
+  from {
+    top: -100px;
+  }
+
+  to {
+    top: 100%;
+  }
+}
+
+.glow-text {
+  text-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-inter), sans-serif;
+  overflow-x: hidden;
 }

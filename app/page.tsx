@@ -1,50 +1,115 @@
 import HeroSequence from '@/components/HeroSequence'
 import Navbar from '@/components/Navbar'
+import Countdown from '@/components/Countdown'
 
 export default function Home() {
   const events = [
-    { title: "RoboSoccer", desc: "Mechanical athletes on the field.", icon: "⚽" },
-    { title: "Desert Dash", desc: "Navigating treacherous terrain.", icon: "🏜️" },
-    { title: "WingFury", desc: "Aerial robotic dominance.", icon: "✈️" },
-    { title: "Pathfinder", desc: "Autonomous navigation challenge.", icon: "🧭" }
+    { title: "RoboSoccer", desc: "Mechanical athletes on the field.", icon: "⚽", rules: "/rules/robosoccer.pdf" },
+    { title: "Desert Dash", desc: "Navigating treacherous terrain.", icon: "🏜️", rules: "/rules/desert-dash.pdf" },
+    { title: "WingFury", desc: "Aerial robotic dominance.", icon: "✈️", rules: "/rules/wingfury.pdf" },
+    { title: "Pathfinder", desc: "Autonomous navigation challenge.", icon: "🧭", rules: "/rules/pathfinder.pdf" }
   ]
 
-  const timeline = [
-    { time: "14th Mar", event: "Opening Ceremony & Inspections" },
-    { time: "14th Mar", event: "Qualifying Rounds: All Tracks" },
-    { time: "15th Mar", event: "Grand Finale: The Showdown" },
-    { time: "15th Mar", event: "Prize Distribution" }
-  ]
+  const schedule = {
+    day1: {
+      date: "14th March",
+      venue: "KHELGAON",
+      items: [
+        { time: "10:00 - 11:30", event: "Opening Ceremony" },
+        { time: "11:30 - 13:30", event: "Desert Dash Qualifier" },
+        { time: "13:30 - 14:00", event: "Lunch Break" },
+        { time: "14:00 - 15:30", event: "Desert Dash Finale" },
+        { time: "16:00 - 18:00", event: "RoboSoccer Qualifiers" },
+        { time: "18:00 - 18:30", event: "Snack Break" },
+        { time: "18:30 - 21:00", event: "RoboSoccer Finale" },
+      ]
+    },
+    day2: {
+      date: "15th March",
+      venue: "BSNL",
+      items: [
+        { time: "10:30 - 13:00", event: "RC Plane Qualifier" },
+        { time: "13:00 - 14:00", event: "Lunch Break" },
+        { time: "14:30 - 16:30", event: "Pathfinder Qualifier" },
+        { time: "17:00 - 18:00", event: "Closing Ceremony" },
+        { time: "18:30 - 19:45", event: "Cultural Performance" },
+        { time: "20:30 - 21:30", event: "RDN" },
+      ]
+    }
+  }
 
   return (
     <main className="relative bg-black min-h-screen text-white font-sans selection:bg-blue-600 selection:text-white">
       <Navbar />
 
-      {/* 1. Hero Section (Pinned 300vh, then scroll past) */}
+      {/* 1. Hero Section (Pinned with Sequence) */}
       <HeroSequence />
 
-      {/* 2. About Competition */}
-      <section id="about" className="relative z-10 py-32 px-6 md:px-20 bg-black">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+      {/* 2. About Competition - Cinematic Overhaul */}
+      <section id="about" className="relative z-10 py-32 px-6 md:px-20 bg-black overflow-hidden">
+        {/* Subtle Background Technical Accents */}
+        <div className="absolute top-10 left-10 text-[10px] font-mono text-white/5 uppercase tracking-[0.5em] pointer-events-none select-none">
+          SYSTEM_VERSION: 1.0.26 // CORE_LINK_ESTABLISHED
+        </div>
+        <div className="absolute bottom-10 right-10 text-[10px] font-mono text-white/5 uppercase tracking-[0.5em] pointer-events-none select-none text-right">
+          LAT: 23.3441° N <br /> LONG: 85.3090° E
+        </div>
+
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center relative">
           <div>
-            <h2 className="text-4xl md:text-6xl font-black uppercase italic tracking-tighter mb-6 font-heading">
+            <div className="inline-block px-3 py-1 bg-blue-600/10 border border-blue-500/20 text-blue-500 text-[10px] uppercase tracking-[0.3em] font-bold mb-8 font-accent">
+              Official Briefing
+            </div>
+            <h2 className="text-4xl md:text-7xl font-black uppercase italic tracking-tighter mb-8 font-heading leading-[0.85]">
               IIIT RANCHI <br />
-              <span className="text-blue-600">PRESENTS</span>
+              <span className="text-blue-600 drop-shadow-[0_0_15px_rgba(37,99,235,0.4)]">PRESENTS</span>
             </h2>
-            <div className="space-y-6 text-gray-400 text-lg leading-relaxed">
-              <p>
-                The <strong>Indian Institute of Information Technology (IIIT), Ranchi</strong>, in collaboration with the <strong>Institution’s Innovation Council (IIC)</strong> and <strong>House of Geeks</strong> (Robotics & IoT Club), proudly announces <strong>YANTRA 2026</strong>.
+            <div className="space-y-6 text-gray-400 text-lg leading-relaxed font-body">
+              <p className="border-l-2 border-zinc-800 pl-6">
+                The <strong>Indian Institute of Information Technology (IIIT), Ranchi</strong>, in collaboration with the <strong>Institution’s Innovation Council (IIC)</strong> and <strong>House of Geeks</strong>, proudly announces <strong>YANTRA 2026</strong>.
               </p>
-              <p>
+              <p className="border-l-2 border-blue-600/30 pl-6">
                 A premier inter-college Robotics Fest focused on innovation, engineering excellence, and competitive spirit. Compete. Innovate. Dominate.
               </p>
             </div>
           </div>
-          <div className="h-96 w-full bg-zinc-900 border border-zinc-800 relative group overflow-hidden flex items-center justify-center">
-            <div className="absolute inset-0 bg-blue-500/5 group-hover:bg-blue-500/10 transition-all duration-500" />
-            <div className="text-center p-8 border border-white/10 bg-black/50 backdrop-blur-sm">
-              <h3 className="text-5xl font-black text-white mb-2 font-accent">₹65,000</h3>
-              <p className="text-blue-500 uppercase tracking-widest text-sm font-bold font-heading">Total Prize Pool</p>
+
+          {/* Futuristic Prize Module */}
+          <div className="relative group">
+            {/* Corner Accents */}
+            <div className="absolute -top-4 -left-4 w-8 h-8 border-t-2 border-l-2 border-blue-600 z-20 group-hover:scale-110 transition-transform duration-500" />
+            <div className="absolute -bottom-4 -right-4 w-8 h-8 border-b-2 border-r-2 border-blue-600 z-20 group-hover:scale-110 transition-transform duration-500" />
+
+            <div className="relative h-[400px] w-full bg-zinc-950 border border-zinc-900 overflow-hidden flex flex-col items-center justify-center">
+              {/* Scanning Line Effect */}
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/5 to-transparent h-20 w-full top-[-100px] animate-[scan_4s_infinite_linear] pointer-events-none" />
+
+              <div className="text-center relative z-10 px-12 py-10 border border-white/5 bg-black/40 backdrop-blur-xl shadow-2xl">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-zinc-900 border border-zinc-800 text-[8px] uppercase tracking-widest text-zinc-500 font-mono">
+                  GRAND_REWARD_MODULE
+                </div>
+
+                <h3 className="text-6xl md:text-7xl font-black text-white mb-4 font-accent tracking-tighter glow-text">
+                  ₹65<span className="text-blue-500">,000</span>
+                </h3>
+                <p className="text-blue-500 uppercase tracking-[0.4em] text-xs font-black font-heading mb-8 opacity-80">
+                  Total Prize Pool
+                </p>
+
+                <div className="grid grid-cols-2 gap-4 text-[9px] font-mono text-zinc-500 uppercase border-t border-zinc-800 pt-6">
+                  <div className="text-left">
+                    STATUS: ACTIVE <br />
+                    PRIORITY: HIGH
+                  </div>
+                  <div className="text-right">
+                    AUTH: VERIFIED <br />
+                    DIST: SEEDED
+                  </div>
+                </div>
+              </div>
+
+              {/* Decorative Tech Grid Overlay */}
+              <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:20px_20px]" />
             </div>
           </div>
         </div>
@@ -72,8 +137,18 @@ export default function Home() {
                 <p className="text-gray-500 text-sm mb-6">
                   {event.desc}
                 </p>
-                <div className="text-xs font-mono text-zinc-400 pt-4 border-t border-zinc-900 font-accent">
-                  PRIZE: ₹12,500
+                <div className="flex flex-col gap-4 mt-auto">
+                  <div className="text-xs font-mono text-zinc-400 pt-4 border-t border-zinc-900 font-accent flex justify-between items-center">
+                    <span>PRIZE: ₹12,500</span>
+                    <a
+                      href={event.rules}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-500 hover:text-white transition-colors flex items-center gap-1 group/btn"
+                    >
+                      Rules <span className="text-[10px] group-hover/btn:translate-x-1 transition-transform">→</span>
+                    </a>
+                  </div>
                 </div>
               </div>
             ))}
@@ -83,31 +158,69 @@ export default function Home() {
 
       {/* 4. Schedule (Timeline) */}
       <section id="schedule" className="relative z-10 py-32 px-6 bg-black">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-5xl font-black uppercase text-center mb-20 italic font-heading">
-            14-15th <span className="text-zinc-700">MARCH</span>
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-center text-sm font-bold tracking-[0.3em] uppercase text-blue-500 mb-16 font-heading">
+            Event Schedule
           </h2>
 
-          <div className="space-y-12 pl-8 border-l border-zinc-800 relative">
-            {timeline.map((item, i) => (
-              <div key={i} className="relative group">
-                <span className="absolute -left-[41px] top-1 w-5 h-5 bg-zinc-900 border border-zinc-700 rounded-full flex items-center justify-center group-hover:border-blue-500 transition-colors">
-                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse" />
-                </span>
-                <span className="text-blue-500 font-mono text-sm tracking-widest block mb-1 font-accent">
-                  {item.time}
-                </span>
-                <h4 className="text-white text-xl font-bold uppercase group-hover:text-blue-400 transition-colors font-heading">
-                  {item.event}
-                </h4>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+            {/* Day 1 */}
+            <div>
+              <div className="flex items-center gap-4 mb-10">
+                <h3 className="text-3xl font-black italic uppercase font-heading">Day 01</h3>
+                <div className="h-px flex-1 bg-zinc-800" />
+                <span className="text-zinc-500 font-mono text-sm">{schedule.day1.date}</span>
               </div>
-            ))}
+              <p className="text-blue-500 font-bold mb-8 flex items-center gap-2">
+                <span className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
+                VENUE: {schedule.day1.venue}
+              </p>
+              <div className="space-y-8 pl-6 border-l border-zinc-900">
+                {schedule.day1.items.map((item, i) => (
+                  <div key={i} className="relative group">
+                    <div className="absolute -left-[31px] top-1.5 w-2 h-2 bg-zinc-800 border border-zinc-700 rounded-full group-hover:border-blue-500 transition-colors" />
+                    <span className="text-blue-500 font-mono text-xs tracking-widest block mb-1 font-accent">
+                      {item.time}
+                    </span>
+                    <h4 className="text-white text-lg font-bold uppercase group-hover:text-blue-400 transition-colors font-heading">
+                      {item.event}
+                    </h4>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Day 2 */}
+            <div>
+              <div className="flex items-center gap-4 mb-10">
+                <h3 className="text-3xl font-black italic uppercase font-heading">Day 02</h3>
+                <div className="h-px flex-1 bg-zinc-800" />
+                <span className="text-zinc-500 font-mono text-sm">{schedule.day2.date}</span>
+              </div>
+              <p className="text-blue-500 font-bold mb-8 flex items-center gap-2">
+                <span className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
+                VENUE: {schedule.day2.venue}
+              </p>
+              <div className="space-y-8 pl-6 border-l border-zinc-900">
+                {schedule.day2.items.map((item, i) => (
+                  <div key={i} className="relative group">
+                    <div className="absolute -left-[31px] top-1.5 w-2 h-2 bg-zinc-800 border border-zinc-700 rounded-full group-hover:border-blue-500 transition-colors" />
+                    <span className="text-blue-500 font-mono text-xs tracking-widest block mb-1 font-accent">
+                      {item.time}
+                    </span>
+                    <h4 className="text-white text-lg font-bold uppercase group-hover:text-blue-400 transition-colors font-heading">
+                      {item.event}
+                    </h4>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* 5. Prizes & Rules */}
-      <section id="prizes" className="relative z-10 py-24 bg-zinc-900/50 border-t border-zinc-800">
+      <section id="prizes" className="relative z-10 py-24 bg-zinc-900/50 border-y border-zinc-800">
         <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div className="p-8 border border-zinc-800 bg-black">
             <h4 className="text-blue-500 font-bold uppercase tracking-widest text-xs mb-4 font-heading">Team Size</h4>
@@ -127,8 +240,75 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. CTA / Footer */}
-      <section className="relative z-10 py-40 bg-zinc-950 text-center overflow-hidden">
+      {/* 6. Contact Us */}
+      <section id="contact" className="relative z-10 py-32 px-6 bg-black">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl md:text-6xl font-black uppercase italic tracking-tighter mb-16 font-heading">
+            GET IN <span className="text-blue-600">TOUCH</span>
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div className="space-y-6">
+              <h4 className="text-xl font-bold uppercase font-heading">Event Coordinators</h4>
+              <div className="space-y-4">
+                <div className="p-4 border border-zinc-800 bg-zinc-950/50">
+                  <p className="text-white font-bold font-heading">Kumar Anubhav</p>
+                  <p className="text-blue-500 text-sm font-mono">+91 8400607807</p>
+                </div>
+                <div className="p-4 border border-zinc-800 bg-zinc-950/50">
+                  <p className="text-white font-bold font-heading">Vansh Garg</p>
+                  <p className="text-blue-500 text-sm font-mono">+91 09876 54321</p>
+                </div>
+                <div className="p-4 border border-zinc-800 bg-zinc-950/50">
+                  <p className="text-white font-bold font-heading">Anil Alok</p>
+                  <p className="text-blue-500 text-sm font-mono">+91 09876 54321</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              <h4 className="text-xl font-bold uppercase font-heading">Institutional Support</h4>
+              <div className="space-y-2 text-gray-400 text-sm">
+                <p>House of Geeks (Robotics Club)</p>
+                <p>Institution's Innovation Council (IIC)</p>
+                <p>IIIT Ranchi</p>
+              </div>
+            </div>
+            <div className="space-y-6">
+              <h4 className="text-xl font-bold uppercase font-heading">Socials</h4>
+              <div className="flex gap-4">
+                {[
+                  { name: 'Instagram', icon: <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" /> },
+                  { name: 'LinkedIn', icon: <path d="M4.98 3.5c0 1.381-1.119 2.5-2.5 2.5s-2.5-1.119-2.5-2.5 1.119-2.5 2.5-2.5 2.5 1.119 2.5 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" /> },
+                  { name: 'YouTube', icon: <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" /> },
+                  { name: 'Twitter', icon: <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" /> },
+                ].map((social) => (
+                  <a
+                    key={social.name}
+                    href="#"
+                    className="w-12 h-12 border border-zinc-800 flex items-center justify-center hover:bg-blue-600 hover:border-blue-600 transition-all duration-300 group/social"
+                    title={social.name}
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      className="w-5 h-5 fill-white group-hover/social:scale-110 transition-transform duration-300"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      {social.icon}
+                    </svg>
+                  </a>
+                ))}
+              </div>
+              <p className="text-zinc-500 text-xs mt-4">
+                Follow us for real-time updates and highlights.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. CTA / Footer */}
+      <section className="relative z-10 py-40 bg-zinc-950 text-center overflow-hidden border-t border-zinc-900">
         <div className="absolute inset-0 opacity-10 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
 
         <div className="relative z-10">

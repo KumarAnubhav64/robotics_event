@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import Countdown from '@/components/Countdown'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -20,6 +21,8 @@ export default function HeroSequence() {
   const headlineRef = useRef<HTMLHeadingElement>(null)
   const subheadlineRef = useRef<HTMLHeadingElement>(null)
   const ctaRef = useRef<HTMLButtonElement>(null)
+  const countdownContainerRef = useRef<HTMLDivElement>(null)
+  const scrollIndicatorRef = useRef<HTMLDivElement>(null)
 
   const [images, setImages] = useState<HTMLImageElement[]>([])
   const [isLoaded, setIsLoaded] = useState(false)
@@ -132,8 +135,8 @@ export default function HeroSequence() {
       scrollTrigger: {
         trigger: container,
         start: 'top top',
-        end: '+=300%',
-        scrub: true, // specific number for smoothness, or true for direct link
+        end: '+=400%', // Increased for more sequence phases
+        scrub: true,
         pin: true,
       }
     })
@@ -142,23 +145,43 @@ export default function HeroSequence() {
     tl.to(frame, {
       index: FRAME_COUNT - 1,
       ease: 'none',
-      duration: 3, // Relative duration unit
+      duration: 3,
       onUpdate: () => render()
     })
 
-    // Phase 2: Cinematic Text Reveal (Overlapping slightly end of frame animation)
-    // Trigger at roughly 85% of timeline
+    // Phase 2: Cinematic Text Reveal
     tl.to(overlayRef.current, {
-      opacity: 1, // darker overlay
+      opacity: 1,
       duration: 1,
       ease: 'power2.out'
-    }, "-=0.5") // Start before frames finish
+    }, "-=0.2")
 
     tl.fromTo(textContainerRef.current,
       { y: 50, opacity: 0 },
       { y: 0, opacity: 1, duration: 1, ease: 'power2.out' },
-      "<" // Start with overlay
+      "<"
     )
+
+    // Phase 3: Text Fade Out (Keep robot pinned/static)
+    tl.to(textContainerRef.current, {
+      opacity: 0,
+      y: -50,
+      duration: 1,
+      ease: 'power2.in',
+      delay: 0.5
+    })
+
+    // Phase 4: Countdown Reveal
+    tl.fromTo(countdownContainerRef.current,
+      { opacity: 0, y: 30, scale: 0.9 },
+      { opacity: 1, y: 0, scale: 1, duration: 1, ease: 'power2.out' }
+    )
+
+    // Phase 5: Fade out scroll indicator as we get deep into sequence
+    tl.to(scrollIndicatorRef.current, {
+      opacity: 0,
+      duration: 0.5
+    }, "<")
 
     // Note: scrubbing cleans up automatically, but kill explicit triggers on unmount
     return () => {
@@ -205,10 +228,10 @@ export default function HeroSequence() {
 
         <h1
           ref={headlineRef}
-          className="text-white text-6xl md:text-8xl font-black uppercase tracking-tighter leading-[0.9] italic transform -skew-x-6 font-heading"
+          className="text-white text-6xl md:text-8xl font-black uppercase tracking-tighter leading-[0.9] italic transform -skew-x-6 font-heading px-4 pb-6"
         >
           YANTRA <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400 font-heading">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400 font-heading px-10">
             2026
           </span>
         </h1>
@@ -228,11 +251,28 @@ export default function HeroSequence() {
         </button>
       </div>
 
+      {/* Countdown Layer (Fades in later) */}
+      <div
+        ref={countdownContainerRef}
+        className="absolute inset-0 flex flex-col items-center justify-center z-40 opacity-0 pointer-events-none"
+      >
+        <div className="text-[10px] font-mono text-blue-500 uppercase tracking-[0.5em] mb-8 flex items-center gap-3">
+          <span className="w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse" />
+          T-MINUS_COMMENCEMENT
+        </div>
+        <div className="scale-110">
+          <Countdown />
+        </div>
+      </div>
+
       {/* Bottom Gradient Underlay for legibility */}
       <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black to-transparent z-25 pointer-events-none opacity-80" />
 
       {/* Scroll indicator - Iteration 3: Refined & Underlayed */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 z-30 pointer-events-none">
+      <div
+        ref={scrollIndicatorRef}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 z-30 pointer-events-none"
+      >
         <span className="text-[10px] md:text-xs uppercase tracking-[0.4em] text-white font-accent font-bold animate-pulse drop-shadow-[0_0_8px_rgba(59,130,246,0.4)]">
           Scroll to Explore
         </span>
