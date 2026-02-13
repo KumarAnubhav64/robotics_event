@@ -170,7 +170,7 @@ export default function HeroSequence() {
 
   if (!isLoaded) {
     return (
-      <div className="h-screen w-full bg-black flex items-center justify-center text-white font-mono uppercase tracking-widest text-sm animate-pulse">
+      <div className="h-screen w-full bg-black flex items-center justify-center text-white font-accent uppercase tracking-[0.3em] text-xs animate-pulse">
         Initializing Systems...
       </div>
     )
@@ -184,13 +184,6 @@ export default function HeroSequence() {
         className="absolute top-0 left-0 w-full h-full object-cover z-0"
       />
 
-      {/* Grain Overlay - Subtle cinematic texture */}
-      <div
-        className="absolute inset-0 w-full h-full pointer-events-none z-10 opacity-20 mix-blend-overlay"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`
-        }}
-      />
 
       {/* Focus/Dark Overlay (Fades in at end) */}
       <div
@@ -205,17 +198,17 @@ export default function HeroSequence() {
       >
         <h2
           ref={subheadlineRef}
-          className="text-blue-500 font-bold tracking-[0.2em] text-sm md:text-base uppercase mb-4"
+          className="text-blue-500 font-bold tracking-[0.2em] text-sm md:text-base uppercase mb-4 font-heading"
         >
           IIIT RANCHI PRESENTS
         </h2>
 
         <h1
           ref={headlineRef}
-          className="text-white text-6xl md:text-8xl font-black uppercase tracking-tighter leading-[0.9] italic transform -skew-x-6"
+          className="text-white text-6xl md:text-8xl font-black uppercase tracking-tighter leading-[0.9] italic transform -skew-x-6 font-heading"
         >
           YANTRA <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400 font-heading">
             2026
           </span>
         </h1>
@@ -226,7 +219,7 @@ export default function HeroSequence() {
 
         <button
           ref={ctaRef}
-          className="mt-10 group relative px-8 py-4 bg-transparent border border-white/20 overflow-hidden transition-all hover:border-blue-500 hover:shadow-[0_0_30px_rgba(59,130,246,0.3)] pointer-events-auto"
+          className="mt-10 group relative px-8 py-4 bg-transparent border border-white/20 overflow-hidden transition-all hover:border-blue-500 hover:shadow-[0_0_30px_rgba(59,130,246,0.3)] pointer-events-auto font-heading"
         >
           <div className="absolute inset-0 w-0 bg-blue-600 transition-all duration-[250ms] ease-out group-hover:w-full opacity-90" />
           <span className="relative text-white font-bold tracking-widest uppercase text-sm group-hover:text-white transition-colors">
@@ -235,10 +228,17 @@ export default function HeroSequence() {
         </button>
       </div>
 
-      {/* Scroll indicator - fades out as you scroll down naturally due to absolute positioning passing out of view eventually, or can animate out */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-30 opacity-70 animate-bounce pointer-events-none mix-blend-difference">
-        <span className="text-[10px] uppercase tracking-widest text-white">Initialize</span>
-        <div className="w-[1px] h-12 bg-white/50" />
+      {/* Bottom Gradient Underlay for legibility */}
+      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black to-transparent z-25 pointer-events-none opacity-80" />
+
+      {/* Scroll indicator - Iteration 3: Refined & Underlayed */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 z-30 pointer-events-none">
+        <span className="text-[10px] md:text-xs uppercase tracking-[0.4em] text-white font-accent font-bold animate-pulse drop-shadow-[0_0_8px_rgba(59,130,246,0.4)]">
+          Scroll to Explore
+        </span>
+        <div className="relative w-[1.5px] h-16 bg-white/10 overflow-hidden rounded-full shadow-[0_0_10px_rgba(59,130,246,0.2)]">
+          <div className="absolute top-0 left-0 w-full h-full bg-blue-500 -translate-y-full animate-[scroll-draw_2s_infinite_ease-in-out]" />
+        </div>
       </div>
     </div>
   )

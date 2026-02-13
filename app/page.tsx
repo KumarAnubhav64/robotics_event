@@ -27,7 +27,7 @@ export default function Home() {
       <section id="about" className="relative z-10 py-32 px-6 md:px-20 bg-black">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-4xl md:text-6xl font-black uppercase italic tracking-tighter mb-6">
+            <h2 className="text-4xl md:text-6xl font-black uppercase italic tracking-tighter mb-6 font-heading">
               IIIT RANCHI <br />
               <span className="text-blue-600">PRESENTS</span>
             </h2>
@@ -43,8 +43,8 @@ export default function Home() {
           <div className="h-96 w-full bg-zinc-900 border border-zinc-800 relative group overflow-hidden flex items-center justify-center">
             <div className="absolute inset-0 bg-blue-500/5 group-hover:bg-blue-500/10 transition-all duration-500" />
             <div className="text-center p-8 border border-white/10 bg-black/50 backdrop-blur-sm">
-              <h3 className="text-5xl font-black text-white mb-2">₹65,000</h3>
-              <p className="text-blue-500 uppercase tracking-widest text-sm font-bold">Total Prize Pool</p>
+              <h3 className="text-5xl font-black text-white mb-2 font-accent">₹65,000</h3>
+              <p className="text-blue-500 uppercase tracking-widest text-sm font-bold font-heading">Total Prize Pool</p>
             </div>
           </div>
         </div>
@@ -53,7 +53,7 @@ export default function Home() {
       {/* 3. Event Categories */}
       <section id="events" className="relative z-10 py-32 bg-zinc-950 border-y border-zinc-800">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-center text-sm font-bold tracking-[0.3em] uppercase text-blue-500 mb-16">
+          <h2 className="text-center text-sm font-bold tracking-[0.3em] uppercase text-blue-500 mb-16 font-heading">
             Event Line-up
           </h2>
 
@@ -63,16 +63,16 @@ export default function Home() {
                 <div className="absolute top-0 right-0 p-4 opacity-10 text-6xl grayscale group-hover:grayscale-0 transition-all duration-500">
                   {event.icon}
                 </div>
-                <div className="w-12 h-12 bg-zinc-900 mb-6 flex items-center justify-center text-blue-500 font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                <div className="w-12 h-12 bg-zinc-900 mb-6 flex items-center justify-center text-blue-500 font-bold group-hover:bg-blue-600 group-hover:text-white transition-colors font-accent">
                   0{i + 1}
                 </div>
-                <h3 className="text-xl font-bold uppercase mb-2 text-white group-hover:text-blue-400 transition-colors">
+                <h3 className="text-xl font-bold uppercase mb-2 text-white group-hover:text-blue-400 transition-colors font-heading">
                   {event.title}
                 </h3>
                 <p className="text-gray-500 text-sm mb-6">
                   {event.desc}
                 </p>
-                <div className="text-xs font-mono text-zinc-400 pt-4 border-t border-zinc-900">
+                <div className="text-xs font-mono text-zinc-400 pt-4 border-t border-zinc-900 font-accent">
                   PRIZE: ₹12,500
                 </div>
               </div>
@@ -84,7 +84,7 @@ export default function Home() {
       {/* 4. Schedule (Timeline) */}
       <section id="schedule" className="relative z-10 py-32 px-6 bg-black">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-5xl font-black uppercase text-center mb-20 italic">
+          <h2 className="text-5xl font-black uppercase text-center mb-20 italic font-heading">
             14-15th <span className="text-zinc-700">MARCH</span>
           </h2>
 
@@ -94,10 +94,10 @@ export default function Home() {
                 <span className="absolute -left-[41px] top-1 w-5 h-5 bg-zinc-900 border border-zinc-700 rounded-full flex items-center justify-center group-hover:border-blue-500 transition-colors">
                   <div className="w-1.5 h-1.5 bg-blue-500 rounded-full animate-pulse" />
                 </span>
-                <span className="text-blue-500 font-mono text-sm tracking-widest block mb-1">
+                <span className="text-blue-500 font-mono text-sm tracking-widest block mb-1 font-accent">
                   {item.time}
                 </span>
-                <h4 className="text-white text-xl font-bold uppercase group-hover:text-blue-400 transition-colors">
+                <h4 className="text-white text-xl font-bold uppercase group-hover:text-blue-400 transition-colors font-heading">
                   {item.event}
                 </h4>
               </div>
@@ -110,19 +110,19 @@ export default function Home() {
       <section id="prizes" className="relative z-10 py-24 bg-zinc-900/50 border-t border-zinc-800">
         <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div className="p-8 border border-zinc-800 bg-black">
-            <h4 className="text-blue-500 font-bold uppercase tracking-widest text-xs mb-4">Team Size</h4>
-            <p className="text-4xl font-black text-white">2-4</p>
-            <p className="text-zinc-500 text-sm mt-2">Members per Team</p>
+            <h4 className="text-blue-500 font-bold uppercase tracking-widest text-xs mb-4 font-heading">Team Size</h4>
+            <p className="text-4xl font-black text-white font-accent">2-4</p>
+            <p className="text-zinc-500 text-sm mt-2 font-body">Members per Team</p>
           </div>
           <div className="p-8 border border-zinc-800 bg-black">
-            <h4 className="text-blue-500 font-bold uppercase tracking-widest text-xs mb-4">Registration</h4>
-            <p className="text-4xl font-black text-white">₹250</p>
-            <p className="text-zinc-500 text-sm mt-2">Per Team / Per Event</p>
+            <h4 className="text-blue-500 font-bold uppercase tracking-widest text-xs mb-4 font-heading">Registration</h4>
+            <p className="text-4xl font-black text-white font-accent">₹250</p>
+            <p className="text-zinc-500 text-sm mt-2 font-body">Per Team / Per Event</p>
           </div>
           <div className="p-8 border border-zinc-800 bg-black">
-            <h4 className="text-blue-500 font-bold uppercase tracking-widest text-xs mb-4">Eligibility</h4>
-            <p className="text-2xl font-black text-white mt-1">OPEN TO ALL</p>
-            <p className="text-zinc-500 text-sm mt-3">College Students</p>
+            <h4 className="text-blue-500 font-bold uppercase tracking-widest text-xs mb-4 font-heading">Eligibility</h4>
+            <p className="text-2xl font-black text-white mt-1 font-heading">OPEN TO ALL</p>
+            <p className="text-zinc-500 text-sm mt-3 font-body">College Students</p>
           </div>
         </div>
       </section>
@@ -132,10 +132,10 @@ export default function Home() {
         <div className="absolute inset-0 opacity-10 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
 
         <div className="relative z-10">
-          <h2 className="text-6xl md:text-9xl font-black text-white/5 uppercase tracking-tighter absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full pointer-events-none">
+          <h2 className="text-6xl md:text-9xl font-black text-white/5 uppercase tracking-tighter absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full pointer-events-none font-heading">
             YANTRA '26
           </h2>
-          <h3 className="text-4xl md:text-5xl font-bold uppercase mb-8 relative">
+          <h3 className="text-4xl md:text-5xl font-bold uppercase mb-8 relative font-heading">
             Ready to <span className="text-blue-500">Dominate?</span>
           </h3>
           <div className="flex flex-col items-center gap-6">
@@ -143,7 +143,7 @@ export default function Home() {
               href="https://unstop.com/p/yantra-2026-iiit-ranchi-1419741"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-10 py-4 bg-white text-black font-bold uppercase tracking-widest hover:bg-blue-500 hover:text-white transition-all transform hover:scale-105"
+              className="px-10 py-4 bg-white text-black font-bold uppercase tracking-widest hover:bg-blue-500 hover:text-white transition-all transform hover:scale-105 font-heading"
             >
               Register Now
             </a>
