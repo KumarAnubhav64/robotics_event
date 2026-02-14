@@ -272,7 +272,7 @@ export default function Home() {
 
         <div className="max-w-xl mx-auto px-6">
           <a
-            href="/pdfs/Yantra'26-Brochure.pdf"
+            href="/pdfs/Yantra'26_Brochure.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-4 p-6 border border-blue-500/30 bg-blue-500/5 hover:bg-blue-500/10 transition-all group"

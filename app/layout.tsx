@@ -21,8 +21,8 @@ export const metadata: Metadata = {
   title: "YANTRA 2026 | IIIT Ranchi",
   description: "Premier inter-college Robotics Fest focused on innovation, engineering excellence, and competitive spirit.",
   icons: {
-    icon: "/logo.png",
-    apple: "/logo.png",
+    icon: "/logo.png?v=3",
+    apple: "/logo.png?v=3",
   },
 };
 
