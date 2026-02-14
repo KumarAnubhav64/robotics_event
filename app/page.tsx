@@ -301,15 +301,15 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             <div className="space-y-6">
-              <h4 className="text-xl font-bold uppercase font-heading text-blue-500">Lead Coordinators</h4>
+              <h4 className="text-xl font-bold uppercase font-heading text-blue-500">Event Leads</h4>
               <div className="space-y-4">
                 <div className="p-4 border border-zinc-800 bg-zinc-950/50">
                   <p className="text-white font-bold font-heading">Kumar Anubhav</p>
                   <p className="text-blue-500 text-sm font-mono">+91 84006 07807</p>
                 </div>
                 <div className="p-4 border border-zinc-800 bg-zinc-950/50">
-                  <p className="text-white font-bold font-heading">Anil Alok</p>
-                  <p className="text-blue-500 text-sm font-mono">+91 70614 64256</p>
+                  <p className="text-white font-bold font-heading">Chaitanya Chaurasia</p>
+                  <p className="text-blue-500 text-sm font-mono">+91 93356 54011</p>
                 </div>
               </div>
             </div>
