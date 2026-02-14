@@ -240,15 +240,15 @@ export default function HeroSequence() {
           The ultimate test of engineering and autonomy.
         </p>
 
-        <button
-          ref={ctaRef}
-          className="mt-10 group relative px-8 py-4 bg-transparent border border-white/20 overflow-hidden transition-all hover:border-blue-500 hover:shadow-[0_0_30px_rgba(59,130,246,0.3)] pointer-events-auto font-heading"
+        <a
+          href="#events"
+          className="mt-10 group relative px-8 py-4 bg-transparent border border-white/20 overflow-hidden transition-all hover:border-blue-500 hover:shadow-[0_0_30px_rgba(59,130,246,0.3)] pointer-events-auto font-heading block text-center"
         >
           <div className="absolute inset-0 w-0 bg-blue-600 transition-all duration-[250ms] ease-out group-hover:w-full opacity-90" />
           <span className="relative text-white font-bold tracking-widest uppercase text-sm group-hover:text-white transition-colors">
             Register Team
           </span>
-        </button>
+        </a>
       </div>
 
       {/* Countdown Layer (Fades in later) */}

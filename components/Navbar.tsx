@@ -31,18 +31,12 @@ export default function Navbar() {
       )}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        {/* Logo Area - Refined clipping for better branding visibility */}
-        <div className="h-5 w-10  relative  flex items-center justify-center">
-          <div className="absolute inset-0 flex items-center justify-center scale-[2.8]">
-            <Image
-              src="/logo.png"
-              alt="YANTRA 2026 Logo"
-              width={160}
-              height={160}
-              className="object-contain pointer-events-none mix-blend-screen"
-              priority
-            />
-          </div>
+        <div className="flex items-center">
+          <img
+            src="/logo.png?v=3"
+            alt="YANTRA 2026 Logo"
+            className="h-12 w-auto object-contain pointer-events-none"
+          />
         </div>
 
         {/* Desktop Links */}
@@ -61,9 +55,7 @@ export default function Navbar() {
 
         {/* CTA Button */}
         <a
-          href="https://unstop.com/p/yantra-2026-iiit-ranchi-1419741"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="#events"
           className="px-6 py-2 bg-white text-black text-xs font-black uppercase tracking-widest hover:bg-blue-500 hover:text-white transition-all transform hover:-translate-y-0.5 font-heading"
         >
           Register
