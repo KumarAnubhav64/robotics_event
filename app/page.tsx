@@ -50,11 +50,12 @@ export default function Home() {
       date: "15th March",
       venue: "BSNL",
       items: [
-        { time: "10:30 - 13:00", event: "RC Plane Qualifier" },
-        { time: "14:30 - 16:30", event: "Pathfinder Qualifier" },
+        { time: "10:30 - 12:00", event: "WingFury Qualifier" },
+        { time: "12:15 - 13:00", event: "WingFury Finale" },
+        { time: "14:30 - 15:30", event: "Pathfinder Qualifier" },
+        { time: "15:45 - 16:30", event: "Pathfinder Finale" },
         { time: "17:00 - 18:00", event: "Closing Ceremony" },
         { time: "18:30 - 21:30", event: "Cultural Performance" },
-
       ]
     }
   }
@@ -298,21 +299,49 @@ export default function Home() {
             GET IN <span className="text-blue-600">TOUCH</span>
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             <div className="space-y-6">
-              <h4 className="text-xl font-bold uppercase font-heading">Event Coordinators</h4>
+              <h4 className="text-xl font-bold uppercase font-heading text-blue-500">Lead Coordinators</h4>
               <div className="space-y-4">
                 <div className="p-4 border border-zinc-800 bg-zinc-950/50">
                   <p className="text-white font-bold font-heading">Kumar Anubhav</p>
                   <p className="text-blue-500 text-sm font-mono">+91 84006 07807</p>
                 </div>
                 <div className="p-4 border border-zinc-800 bg-zinc-950/50">
+                  <p className="text-white font-bold font-heading">Anil Alok</p>
+                  <p className="text-blue-500 text-sm font-mono">+91 70614 64256</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              <h4 className="text-xl font-bold uppercase font-heading text-blue-500">Student Coordinators</h4>
+              <div className="space-y-4">
+                <div className="p-4 border border-zinc-800 bg-zinc-950/50">
                   <p className="text-white font-bold font-heading">Vansh Garg</p>
-                  <p className="text-blue-500 text-sm font-mono">+91 98765 43210</p>
+                  <p className="text-blue-500 text-sm font-mono">+91 96671 52033</p>
                 </div>
                 <div className="p-4 border border-zinc-800 bg-zinc-950/50">
-                  <p className="text-white font-bold font-heading">Anil Alok</p>
-                  <p className="text-blue-500 text-sm font-mono">+91 98765 43210</p>
+                  <p className="text-white font-bold font-heading">Dipankar Sinha</p>
+                  <p className="text-blue-500 text-sm font-mono">+91 80021 80608</p>
+                </div>
+                <div className="p-4 border border-zinc-800 bg-zinc-950/50">
+                  <p className="text-white font-bold font-heading">Saurabh Shinde</p>
+                  <p className="text-blue-500 text-sm font-mono">+91 87672 83733</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              <h4 className="text-xl font-bold uppercase font-heading text-blue-500">Accommodation</h4>
+              <div className="space-y-4">
+                <div className="p-4 border border-zinc-800 bg-zinc-950/50">
+                  <p className="text-white font-bold font-heading">Akib Ali</p>
+                  <p className="text-blue-500 text-sm font-mono">+91 63911 02839</p>
+                </div>
+                <div className="p-4 border border-zinc-800 bg-zinc-950/50">
+                  <p className="text-white font-bold font-heading">Amrit Patel</p>
+                  <p className="text-blue-500 text-sm font-mono">+91 62077 01448</p>
                 </div>
               </div>
             </div>
@@ -323,20 +352,6 @@ export default function Home() {
                 <p>House of Geeks (Robotics Club)</p>
                 <p>Institution's Innovation Council (IIC)</p>
                 <p>IIIT Ranchi</p>
-              </div>
-            </div>
-
-            <div className="space-y-6">
-              <h4 className="text-xl font-bold uppercase font-heading">Accommodation</h4>
-              <div className="space-y-4">
-                <div className="p-4 border border-zinc-800 bg-zinc-950/50">
-                  <p className="text-white font-bold font-heading">Akib Ali</p>
-                  <p className="text-blue-500 text-sm font-mono">+91 63911 02839</p>
-                </div>
-                <div className="p-4 border border-zinc-800 bg-zinc-950/50">
-                  <p className="text-white font-bold font-heading">Amrit Patel</p>
-                  <p className="text-blue-500 text-sm font-mono">+91 62077 01448</p>
-                </div>
               </div>
             </div>
             <div className="space-y-6">
