@@ -22,7 +22,7 @@ export default function Home() {
       title: "WingFury",
       desc: "Aerial robotic combat dominance.",
       icon: "✈️",
-      rules: "/pdfs/WingFury_Rulebook.pdf",
+      rules: "https://drive.google.com/file/d/1oOM0wcj4kNc8jLBDlxYq0RoEuy3R309G/view?usp=drive_link",
       regLink: "https://unstop.com/p/yantra-2026-wingfury-indian-institute-of-information-technology-ranchi-1640923"
     },
     {
@@ -273,7 +273,7 @@ export default function Home() {
 
         <div className="max-w-xl mx-auto px-6">
           <a
-            href="/pdfs/Yantra'26_Brochure.pdf"
+            href="https://drive.google.com/file/d/1SqPmhNUF5cYI7mrS7cKN5MOvWkPRyEIR/view?usp=drive_link"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-4 p-6 border border-blue-500/30 bg-blue-500/5 hover:bg-blue-500/10 transition-all group"
