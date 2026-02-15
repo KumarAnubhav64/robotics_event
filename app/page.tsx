@@ -115,7 +115,7 @@ export default function Home() {
                   ₹65<span className="text-blue-500">,000+</span>
                 </h3>
                 <p className="text-blue-500 uppercase tracking-[0.4em] text-xs font-black font-heading mb-8 opacity-80">
-                  Total Prize Pool
+                  Event Details
                 </p>
 
                 <div className="grid grid-cols-2 gap-4 text-[9px] font-mono text-zinc-500 uppercase border-t border-zinc-800 pt-6">
@@ -162,7 +162,7 @@ export default function Home() {
                 <div className="flex flex-col gap-4 mt-auto">
                   <div className="text-xs font-mono text-zinc-400 pt-4 border-t border-zinc-900 font-accent flex flex-col gap-3">
                     <div className="flex justify-between items-center w-full">
-                      <span>PRIZE: ₹12,500+</span>
+                      <span>DETAILS: ₹12,500+</span>
                       <a
                         href={event.rules}
                         target="_blank"
@@ -252,7 +252,7 @@ export default function Home() {
       </section>
 
       {/* 5. Prizes & Rules */}
-      <section id="prizes" className="relative z-10 py-24 bg-zinc-900/50 border-y border-zinc-800">
+      <section id="details" className="relative z-10 py-24 bg-zinc-900/50 border-y border-zinc-800">
         <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center mb-12">
           <div className="p-8 border border-zinc-800 bg-black">
             <h4 className="text-blue-500 font-bold uppercase tracking-widest text-xs mb-4 font-heading">Team Size</h4>
