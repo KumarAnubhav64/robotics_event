@@ -88,7 +88,7 @@ export default function Home() {
             </h2>
             <div className="space-y-6 text-gray-400 text-lg leading-relaxed font-body">
               <p className="border-l-2 border-zinc-800 pl-6">
-                The <strong>Indian Institute of Information Technology (IIIT), Ranchi</strong>, in collaboration with the <strong>Institution’s Innovation Council (IIC)</strong> and <strong>House of Geeks</strong>, proudly announces <strong>YANTRA 2026</strong>.
+                The <strong>Indian Institute of Information Technology (IIIT), Ranchi</strong>, in collaboration with the <strong>Institution’s Innovation Council (IIC)</strong>, proudly announces <strong>YANTRA 2026</strong>.
               </p>
               <p className="border-l-2 border-blue-600/30 pl-6">
                 A premier inter-college Robotics Fest focused on innovation, engineering excellence, and competitive spirit. Compete. Innovate. Dominate.
@@ -349,7 +349,6 @@ export default function Home() {
             <div className="space-y-6">
               <h4 className="text-xl font-bold uppercase font-heading">Institutional Support</h4>
               <div className="space-y-2 text-gray-400 text-sm">
-                <p>House of Geeks (Robotics Club)</p>
                 <p>Institution's Innovation Council (IIC)</p>
                 <p>IIIT Ranchi</p>
               </div>
@@ -424,7 +423,7 @@ export default function Home() {
 
         <footer className="absolute bottom-0 w-full py-6 border-t border-zinc-900 text-center">
           <p className="text-zinc-600 text-xs uppercase tracking-widest">
-            © 2026 IIIT Ranchi • House of Geeks • IIC
+            © 2026 IIIT Ranchi • IIC
           </p>
         </footer>
       </section>
