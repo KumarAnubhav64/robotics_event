@@ -32,10 +32,13 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <div className="flex items-center">
-          <img
-            src="/logo.png?v=3"
+          <Image
+            src="/logo.png"
             alt="YANTRA 2026 Logo"
+            width={140}
+            height={48}
             className="h-12 w-auto object-contain pointer-events-none"
+            priority
           />
         </div>
 

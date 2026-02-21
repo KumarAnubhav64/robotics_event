@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Countdown from '@/components/Countdown'
+import NextImage from 'next/image'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -35,7 +36,7 @@ export default function HeroSequence() {
 
       for (let i = 1; i <= FRAME_COUNT; i++) {
         const frameIndex = i.toString().padStart(3, '0') // 001..120
-        const img = new Image()
+        const img = new window.Image()
         const src = `${FRAME_PATH}${frameIndex}.webp`
 
         const promise = new Promise<void>((resolve) => {
@@ -217,14 +218,30 @@ export default function HeroSequence() {
       {/* Content Layer - "Competitive Aggressive" Style */}
       <div
         ref={textContainerRef}
-        className="absolute inset-x-0 top-[35%] flex flex-col items-center justify-center text-center z-30 opacity-0 px-4"
+        className="absolute inset-x-0 top-[28%] flex flex-col items-center justify-center text-center z-30 opacity-0 px-4"
       >
-        <h2
+        <div className="mb-4 flex items-center justify-center gap-4 bg-black/15 border border-white/5 px-4 py-3 backdrop-blur-lg rounded-md shadow-[0_0_30px_rgba(59,130,246,0.08)]">
+          <NextImage
+            src="/2090547-middle-removebg-preview.png"
+            alt="College Logo"
+            width={64}
+            height={64}
+            className="h-12 md:h-16 w-auto object-contain"
+          />
+          <NextImage
+            src="/images-removebg-preview.png"
+            alt="Institution's Innovation Council Logo"
+            width={160}
+            height={60}
+            className="h-12 md:h-16 w-auto object-contain"
+          />
+        </div>
+        <div
           ref={subheadlineRef}
-          className="text-blue-500 font-bold tracking-[0.2em] text-sm md:text-base uppercase mb-4 font-heading"
+          className="text-blue-500 font-bold tracking-[0.4em] text-[10px] md:text-xs uppercase mb-6 font-heading"
         >
-          IIIT RANCHI PRESENTS
-        </h2>
+          PRESENTS
+        </div>
 
         <h1
           ref={headlineRef}
@@ -242,7 +259,7 @@ export default function HeroSequence() {
 
         <a
           href="#events"
-          className="mt-10 group relative px-8 py-4 bg-transparent border border-white/20 overflow-hidden transition-all hover:border-blue-500 hover:shadow-[0_0_30px_rgba(59,130,246,0.3)] pointer-events-auto font-heading block text-center"
+          className="mt-8 md:mt-10 group relative px-8 py-4 bg-transparent border border-white/20 overflow-hidden transition-all hover:border-blue-500 hover:shadow-[0_0_30px_rgba(59,130,246,0.3)] pointer-events-auto font-heading block text-center"
         >
           <div className="absolute inset-0 w-0 bg-blue-600 transition-all duration-[250ms] ease-out group-hover:w-full opacity-90" />
           <span className="relative text-white font-bold tracking-widest uppercase text-sm group-hover:text-white transition-colors">
@@ -271,7 +288,7 @@ export default function HeroSequence() {
       {/* Scroll indicator - Iteration 3: Refined & Underlayed */}
       <div
         ref={scrollIndicatorRef}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 z-30 pointer-events-none"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center gap-4 z-30 pointer-events-none"
       >
         <span className="text-[10px] md:text-xs uppercase tracking-[0.4em] text-white font-accent font-bold animate-pulse drop-shadow-[0_0_8px_rgba(59,130,246,0.4)]">
           Scroll to Explore
