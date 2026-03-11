@@ -36,7 +36,7 @@ export default function Home() {
 
   const schedule = {
     day1: {
-      date: "14th March",
+      date: "28th March",
       venue: "KHELGAON",
       items: [
         { time: "10:00 - 11:30", event: "Opening Ceremony" },
@@ -47,7 +47,7 @@ export default function Home() {
       ]
     },
     day2: {
-      date: "15th March",
+      date: "29th March",
       venue: "BSNL",
       items: [
         { time: "10:30 - 12:00", event: "WingFury Qualifier" },
